@@ -175,8 +175,13 @@ def sector_fundamentals(sector):
 	df.reset_index()
 
 	df.to_csv('/Users/broderickbonelli/Desktop/test.csv')
-    
-    
+   
+	#read in data and graph w/ color gradient
+
+	data = pd.read_csv('/Users/broderickbonelli/Desktop/test.csv', index_col=" ", na_values='-')
+
+	data = data.style.background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[0], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[1], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[2], data.columns)).background_gradient(axis=1, cmap='RdYlGn_r', subset=(data.index[3], data.columns)).background_gradient(axis=1, cmap='RdYlGn_r', subset=(data.index[4], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[5], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[6], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[7], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[8], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[9], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[10], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[11], data.columns)).set_precision(2)
+	display(data)
     
     
     
@@ -184,10 +189,3 @@ def sector_fundamentals(sector):
 sector_fundamentals(entertainment)
 
 
-#read in data and graph w/ color gradient
-
-data = pd.read_csv('/Users/broderickbonelli/Desktop/test.csv', index_col=" ", na_values='-')
-
-#data = data.style.background_gradient(axis=1, cmap='RdYlGn').set_precision(2).background_gradient(cmap='RdYlGn_r', subset=(data.index[2], data.columns)).background_gradient(cmap='RdYlGn_r', subset=(data.index[3], data.columns))
-data = data.style.background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[0], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[1], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[2], data.columns)).background_gradient(axis=1, cmap='RdYlGn_r', subset=(data.index[3], data.columns)).background_gradient(axis=1, cmap='RdYlGn_r', subset=(data.index[4], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[5], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[6], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[7], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[8], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[9], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[10], data.columns)).background_gradient(axis=1, cmap='RdYlGn', subset=(data.index[11], data.columns)).set_precision(2)
-display(data)
